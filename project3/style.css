@@ -1,0 +1,37 @@
+*{
+    background-color: peachpuff
+
+}
+img{
+    height: 200px;
+    width: 200px;
+}
+
+.color-title{
+    font-weight:normal;
+}
+
+#red{
+    color : red;
+}
+
+#blue{
+    color : blue;
+}
+
+#orange{
+    color : orange;
+}
+
+#green{
+    color : green;
+}
+
+#yellow{
+    color : yellow;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
