@@ -1,0 +1,104 @@
+ .flag {
+width: 900px;
+height: 600px;
+position: relative;
+background-color: #FF9933; /* Saffron */
+}
+
+/* White middle band */
+.flag > div {
+background-color: #FFFFFF;
+height: 200px;
+width: 100%;
+position: absolute;
+top: 200px;
+}
+
+/* Green bottom band */
+.flag::after {
+content: "";
+background-color: #138808; /* India Green */
+height: 200px;
+width: 100%;
+position: absolute;
+bottom: 0;
+left: 0;
+}
+
+/* Ashoka Chakra */
+.flag > div > div {
+background-color: transparent;
+border: 10px solid #000080; /* Navy Blue */
+height: 200px;
+width: 200px;
+border-radius: 50%;
+position: absolute;
+top: 0;
+left: 350px; /* Centered in 900px width */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+/* Chakra with 24 spokes */
+.flag > div > div {
+  background-color: transparent;
+  border: 10px solid #000080; /* Navy blue border */
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Create 24 spokes using rotating pseudo-elements */
+.flag > div > div::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 90px;
+  background: #000080;
+  top: 10px;
+  left: 99px;
+  transform-origin: bottom center;
+  box-shadow:
+    0 0 0 #000080,
+    0 0 0 #000080,
+    0 0 0 #000080;
+}
+
+/* Generate all 24 spokes using repeating conic gradients */
+.flag > div > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    #000080 0deg 1.5deg,
+    transparent 1.5deg 15deg
+  );
+  mask: radial-gradient(circle at center, transparent 45%, black 46%);
+}
+
+
+
+/* Text styling */
+.flag p {
+font-size: 4rem;
+color: white;
+text-align: center;
+margin: 0;
+padding-top: 20px;
+font-weight: bold;
+}
+
+.flag > div > div > p {
+color: #000080;
+font-size: 2rem;
+font-weight: bold;
+margin: 0;
+}
